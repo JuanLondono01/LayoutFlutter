@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:layout/icon.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,21 +13,25 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("Flutter Layout Demo", style: TextStyle(color: Colors.black),),
+          title: const Text(
+            "Flutter Layout Demo",
+            style: TextStyle(color: Colors.black),
+          ),
           centerTitle: true,
           backgroundColor: Colors.white,
         ),
-        body: const Padding(
+        body: Padding(
           padding: EdgeInsets.all(0),
           child: Column(
             children: [
-              Image(
+              const Image(
                 image: AssetImage("assets/images/Fondo.png"),
               ),
-              SizedBox(height: 16),
-              Row(
+              const SizedBox(height: 16),
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
+                  
                   Column(
                     children: [
                       Text(
@@ -57,51 +62,18 @@ class MyApp extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(height: 24),
+              const SizedBox(height: 24),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
-                  Column(
-                    children: [
-                      Icon(
-                        Icons.phone,
-                        color: Colors.purple,
-                      ),
-                      Text(
-                        "CALL",
-                        style: TextStyle(color: Colors.purple),
-                      )
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Icon(
-                        Icons.alt_route,
-                        color: Colors.purple,
-                      ),
-                      Text(
-                        "ROUTE",
-                        style: TextStyle(color: Colors.purple),
-                      )
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Icon(
-                        Icons.share,
-                        color: Colors.purple,
-                      ),
-                      Text(
-                        "SHARE",
-                        style: TextStyle(color: Colors.purple),
-                      )
-                    ],
-                  ),
+                  iconsbuilder(Colors.purple, Icons.phone, "CALL"),
+                  iconsbuilder(Colors.purple, Icons.near_me, "ROUTE"),
+                  iconsbuilder(Colors.purple, Icons.share, "SHARE"),
                 ],
               ),
-              Center(
+              const Center(
                 child: Padding(
-                  padding: EdgeInsets.only(top: 50),
+                  padding: EdgeInsets.only(top: 50, left: 30, right: 30),
                   child: Text(
                     'Lake Oeschinen lies at the foot of the Blüemlisalp in the Bernese Alps. '
                     'Situated 1,578 meters above sea level, it is one of the larger Alpine Lakes. '
